@@ -7,7 +7,7 @@ function Question({ question, onAnswered }) {
 
   useEffect(() => {
    
-    const timerId = setTimeout(() => {
+    const timer = setTimeout(() => {
       setTimeRemaining((timeRemaining) => timeRemaining - 1);
     }, 1000);
 
@@ -18,7 +18,7 @@ function Question({ question, onAnswered }) {
     }
   
     return function () {
-      clearTimeout(timerId);
+      clearTimeout(timer);
     }
   }, [timeRemaining, onAnswered]);
 
